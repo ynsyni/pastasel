@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Pastasel - Yeni Ziyaret Ekleme Formu</title>
+  </head>
+  <body>
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Yeni Ziyaret Ekle</h1>
+        </div>
+      </div>
+    </section>
+    <form id="form" class="container m-4 pl-4">
+      <div class="field">
+  <label class="label" for="tarih">Tarih</label>
+  <div class="control">
+    <input 
+      type="date" 
+      id="tarih" 
+      name="Tarih" 
+      readonly
+      placeholder=""
+    >
+  </div>
+
+<input
+  type="text"
+  id="konum"
+  name="Konum"
+  placeholder="Konum alınıyor..."
+  readonly
+/>
+
+ </div>
+<div class="field">
+  <label class="label" for="durum">*Ziyaret Sebebi</label>
+  <div class="control">
+    <div class="select">
+      <select id="gorevi" name="Ziyaret Sebebi" required>
+        <option value="" disabled selected>Ziyaret Sebebi</option>
+        <option value="Ziyaret">Ziyaret</option>
+        <option value="Demo Çalışması">Demo Çalışması</option>
+        </select>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+      <div class="field">
+        <label class="label">*Firma Ünvanı</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Lütfen Firma İsmini Girin"
+            name="Firma Ünvanı"
+            required
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">*Bulunduğu İl</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Firmanın Bulunduğu İl"
+            name="Bulunduğu İl"
+            required
+          />
+        </div>
+        </div>
+      <div class="field">
+        <label class="label">*Firma Yetkilisi</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Firma Yetkilisinin Adı Soyadı"
+            name="Firma Yetkilisi"
+            required
+          />
+      </div>
+      </div>
+      <div class="field">
+  <label class="label" for="gorevi">*Görevi</label>
+  <div class="control">
+    <div class="select">
+      <select id="gorevi" name="Görevi" required>
+        <option value="" disabled selected>Firma Yetkilisinin Görevi</option>
+        <option value="Genel Müdür">Genel Müdür</option>
+        <option value="Satın Alma Sorumlusu">Satın Alma Sorumlusu</option>
+        <option value="Muhasebe Müdürü">Muhasebe Müdürü</option>
+        <option value="İnsan Kaynakları">İnsan Kaynakları</option>
+      </select>
+    </div>
+  </div>
+<br>
+
+<div class="field">
+  <label class="label">*Yetkili Telefon Numarası</label>
+  <div class="control">
+    <input
+      class="input"
+      type="tel"
+      placeholder="Lütfen Telefon Numarası Girin"
+      name="Yetkili Telefon"
+      pattern="[0-9]{10,11}" 
+      maxlength="11"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      required
+    />
+  </div>
+</div>
+
+
+ </div>
+      <div class="field">
+        <label class="label">*Ustabaşı</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Ustabaşının Adı Soyadı"
+            name="Ustabaşı"
+            required
+          />
+      </div>
+ </div>
+     
+
+
+<div class="field">
+  <label class="label">*Ustabaşı Telefon Numarası</label>
+  <div class="control">
+    <input
+      class="input"
+      type="tel"
+      placeholder="Lütfen Telefon Numarası Girin"
+      name="Ustabaşı Telefon"
+      pattern="[0-9]{10,11}" 
+      maxlength="11"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      required
+    />
+  </div>
+</div>     
+
+
+<div class="field">
+        <label class="label">*Çalışan Sayısı</label> 
+        <div class="control">
+          <input
+            class="input"
+            type="number"
+            placeholder="Firmada Kaç Çalışan Bulunuyor" 
+            name="Çalışan Sayısı" 
+            required
+          />
+        </div> 
+     </div>
+
+<div class="field">
+  <label class="label">Firma E-posta Adresi</label>
+  <div class="control">
+    <input
+      class="input"
+      type="email"
+      placeholder="Lütfen e-posta adresinizi girin"
+      name="E-Posta Adresi"
+    />
+  </div>
+</div>
+
+
+<div class="field">
+  <label class="label" for="pazarlamaFirmalari">Çalıştığı Pazarlama Firmaları</label>
+  <div class="control">
+    <textarea
+      class="textarea"
+      id="pazarlamaFirmalari"
+      name="Çalıştığı Pazarlama Firmaları"
+      placeholder="Her satıra bir firma adı giriniz"
+      rows="5"
+      maxlength="200"
+    ></textarea>
+  </div>
+</div>
+
+
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%; text-align:center;">
+  <tr>
+    <th>Ürün</th>
+    <th>Demo</th>
+    <th>Onay</th>
+    <th>Rakip</th>
+  </tr>
+
+  <tr>
+    <td>Kabartma Tozu</td>
+    <td><input type="checkbox" name="Kabartma Tozu - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Kabartma Tozu - Onay" value="TRUE"></td>
+    <td><input type="text" name="Kabartma Tozu - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Pandispanya Sade</td>
+    <td><input type="checkbox" name="Pandispanya Sade - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Pandispanya Sade - Onay" value="TRUE"></td>
+    <td><input type="text" name="Pandispanya Sade - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Pandispanya Kakaolu</td>
+    <td><input type="checkbox" name="Pandispanya Kakaolu - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Pandispanya Kakaolu - Onay" value="TRUE"></td>
+    <td><input type="text" name="Pandispanya Kakaolu - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Krem Şanti Premium</td>
+    <td><input type="checkbox" name="Krem Şanti Premium - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Krem Şanti Premium - Onay" value="TRUE"></td>
+    <td><input type="text" name="Krem Şanti Premium - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Krem Şanti Performance</td>
+    <td><input type="checkbox" name="Krem Şanti Performance - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Krem Şanti Performance - Onay" value="TRUE"></td>
+    <td><input type="text" name="Krem Şanti Performance - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Parfe Cream Şanti</td>
+    <td><input type="checkbox" name="Parfe Cream Şanti - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Parfe Cream Şanti - Onay" value="TRUE"></td>
+    <td><input type="text" name="Parfe Cream Şanti - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Pastacılık Kreması</td>
+    <td><input type="checkbox" name="Pastacılık Kreması - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Pastacılık Kreması - Onay" value="TRUE"></td>
+    <td><input type="text" name="Pastacılık Kreması - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Pastacılık Kreması Performance</td>
+    <td><input type="checkbox" name="Pastacılık Kreması Performance - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Pastacılık Kreması Performance - Onay" value="TRUE"></td>
+    <td><input type="text" name="Pastacılık Kreması Performance - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Kaynatma Krema Şekerli</td>
+    <td><input type="checkbox" name="Kaynatma Krema Şekerli - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Kaynatma Krema Şekerli - Onay" value="TRUE"></td>
+    <td><input type="text" name="Kaynatma Krema Şekerli - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Kaynatma Krema Şekersiz</td>
+    <td><input type="checkbox" name="Kaynatma Krema Şekersiz - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Kaynatma Krema Şekersiz - Onay" value="TRUE"></td>
+    <td><input type="text" name="Kaynatma Krema Şekersiz - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Sade Kek Miks</td>
+    <td><input type="checkbox" name="Sade Kek Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Sade Kek Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Sade Kek Miks - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Dark Moist Çikolatalı Kek Miks</td>
+    <td><input type="checkbox" name="Dark Moist Çikolatalı Kek Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Dark Moist Çikolatalı Kek Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Dark Moist Çikolatalı Kek Miks - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Browni Kek Miks</td>
+    <td><input type="checkbox" name="Browni Kek Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Browni Kek Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Browni Kek Miks - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Velvet Kırmızı</td>
+    <td><input type="checkbox" name="Velvet Kırmızı - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Velvet Kırmızı - Onay" value="TRUE"></td>
+    <td><input type="text" name="Velvet Kırmızı - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Velvet Mor</td>
+    <td><input type="checkbox" name="Velvet Mor - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Velvet Mor - Onay" value="TRUE"></td>
+    <td><input type="text" name="Velvet Mor - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Marble Kek Miks Sade</td>
+    <td><input type="checkbox" name="Marble Kek Miks Sade - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Marble Kek Miks Sade - Onay" value="TRUE"></td>
+    <td><input type="text" name="Marble Kek Miks Sade - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Cookie Miks Vanilyalı</td>
+    <td><input type="checkbox" name="Cookie Miks Vanilyalı - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Cookie Miks Vanilyalı - Onay" value="TRUE"></td>
+    <td><input type="text" name="Cookie Miks Vanilyalı - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Cookie Miks Kakaolu</td>
+    <td><input type="checkbox" name="Cookie Miks Kakaolu - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Cookie Miks Kakaolu - Onay" value="TRUE"></td>
+    <td><input type="text" name="Cookie Miks Kakaolu - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Sufle Miks</td>
+    <td><input type="checkbox" name="Sufle Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Sufle Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Sufle Miks - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Pancake & Waffle Miks</td>
+    <td><input type="checkbox" name="Pancake & Waffle Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Pancake & Waffle Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Pancake & Waffle Miks - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Krem Karamel Miks</td>
+    <td><input type="checkbox" name="Krem Karamel Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Krem Karamel Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Krem Karamel Miks - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Krem Brule Miks</td>
+    <td><input type="checkbox" name="Krem Brule Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Krem Brule Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Krem Brule Miks - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Panna Cotta Miks</td>
+    <td><input type="checkbox" name="Panna Cotta Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Panna Cotta Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Panna Cotta Miks - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Charlotte Sade</td>
+    <td><input type="checkbox" name="Charlotte Sade - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Charlotte Sade - Onay" value="TRUE"></td>
+    <td><input type="text" name="Charlotte Sade - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Charlotte Çikolata</td>
+    <td><input type="checkbox" name="Charlotte Çikolata - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Charlotte Çikolata - Onay" value="TRUE"></td>
+    <td><input type="text" name="Charlotte Çikolata - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Charlotte Frambuaz</td>
+    <td><input type="checkbox" name="Charlotte Frambuaz - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Charlotte Frambuaz - Onay" value="TRUE"></td>
+    <td><input type="text" name="Charlotte Frambuaz - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Charlotte Tiramisu</td>
+    <td><input type="checkbox" name="Charlotte Tiramisu - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Charlotte Tiramisu - Onay" value="TRUE"></td>
+    <td><input type="text" name="Charlotte Tiramisu - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Karamelli Bisküvi Tozu</td>
+    <td><input type="checkbox" name="Karamelli Bisküvi Tozu - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Karamelli Bisküvi Tozu - Onay" value="TRUE"></td>
+    <td><input type="text" name="Karamelli Bisküvi Tozu - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Kakaolu Bisküvi Tozu</td>
+    <td><input type="checkbox" name="Kakaolu Bisküvi Tozu - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Kakaolu Bisküvi Tozu - Onay" value="TRUE"></td>
+    <td><input type="text" name="Kakaolu Bisküvi Tozu - Rakip"></td>
+  </tr>
+
+  <tr>
+    <td>Havuçlu Cevizli Kek Miks</td>
+    <td><input type="checkbox" name="Havuçlu Cevizli Kek Miks - Demo" value="TRUE"></td>
+    <td><input type="checkbox" name="Havuçlu Cevizli Kek Miks - Onay" value="TRUE"></td>
+    <td><input type="text" name="Havuçlu Cevizli Kek Miks - Rakip"></td>
+  </tr>
+
+</table>
+
+
+
+</div>
+</div>
+
+
+      <div class="field">
+        <label class="label">*Demo - Ziyaret Görselleri</label>
+        <div class="control">
+          <div class="file has-name is-fullwidth">
+            <label class="file-label">
+              <input
+                class="file-input"
+                type="file"
+                name="theFile"
+                id="fileInput"
+                accept="image/*"
+                multiple
+                required
+              />
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">Kamerayı Aç</span>
+              </span>
+              <span class="file-name" id="fileNameDisplay">
+                Dosya Seçilmedi
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+     
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Notlar</label>
+        <div class="control">
+          <textarea
+            class="textarea"
+            placeholder="Eklemek istediğiniz notları buraya girebilirsiniz..."
+            name="Notlar"
+          ></textarea>
+        </div>
+      </div>
+ <input type="hidden" name="filename" id="actualFilename" />
+
+      <div class="field">
+        <label class="label">*Onay</label>
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox" name="Tüm Bilgileri Onaylıyorum" value="TRUE" required/> Girdiğim tüm bilgileri kontrol ettim,doğruluğunu kabul ediyor ve onaylıyorum.
+          </label>
+</div>
+      </div>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary" type="submit" id="submit-button">
+            Gönder
+          </button>
+        </div>
+        <div class="control">
+          <button
+            class="button is-danger"
+            type="button"
+            onclick="document.getElementById('form').reset(); document.getElementById('fileNameDisplay').textContent = 'No file selected';"
+          >
+            İptal
+          </button>
+        </div>
+      </div>
+    </form>
+    <div
+      id="message"
+      style="
+        display: none;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 4px;
+        font-weight: bold;
+      "
+    ></div>
+
+    <script>
+      const today = new Date().toISOString().split('T')[0];
+  const tarihInput = document.getElementById('tarih');
+  tarihInput.value = today; // Alanın değeri bugünün tarihi olur
+  tarihInput.placeholder = today; // Placeholder'a da yazılır
+
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      const mapsLink = `https://www.google.com/maps?q=${lat},${lon}`;
+      document.getElementById("konum").value = mapsLink;
+    },
+    function (error) {
+      document.getElementById("konum").value = "Konum alınamadı";
+    }
+  );
+} else {
+  document.getElementById("konum").value = "Tarayıcı konum desteği yok";
+}
+
+      const form = document.getElementById("form");
+      const submitButton = document.getElementById("submit-button");
+      const messageDiv = document.getElementById("message");
+      const fileInput = document.getElementById("fileInput");
+      const fileNameDisplay = document.getElementById("fileNameDisplay");
+
+      // Update displayed filename on file selection
+      fileInput.addEventListener("change", function () {
+        if (this.files && this.files.length > 0) {
+          fileNameDisplay.textContent = this.files[0].name;
+        } else {
+          fileNameDisplay.textContent = "No file selected";
+        }
+      });
+
+      // Function to handle file upload
+      async function uploadFile(file) {
+        return new Promise((resolve, reject) => {
+          const fr = new FileReader();
+          fr.onload = (e) => {
+            const data = e.target.result.split(",");
+            const obj = {
+              fileName: file.name,
+              mimeType: data[0].match(/:(\w.+);/)[1],
+              data: data[1],
+            };
+            resolve(obj);
+          };
+          fr.onerror = reject;
+          fr.readAsDataURL(file);
+        });
+      }
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        messageDiv.textContent = "Gönderiliyor...";
+        messageDiv.style.display = "block";
+        messageDiv.style.backgroundColor = "beige";
+        messageDiv.style.color = "black";
+        submitButton.disabled = true;
+        submitButton.classList.add("is-loading");
+
+        try {
+          const formData = new FormData(this);
+          const formDataObj = {};
+
+          // Convert FormData to object
+          for (let [key, value] of formData.entries()) {
+            formDataObj[key] = value;
+          }
+
+          // Handle file upload if a file is selected
+          if (fileInput.files.length > 0) {
+            const fileObj = await uploadFile(fileInput.files[0]);
+            formDataObj.fileData = fileObj; // Add file data to form data
+          }
+
+          // Submit form data
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbz1IwWnFgqBW6rCcVLWbsFXwy73OPSvbSQjlfY_t7jhDYZAbdO_-uWQw9SNiYX3Gyyw/exec";
+
+          const response = await fetch(scriptURL, {
+            redirect: "follow",
+            method: "POST",
+            body: JSON.stringify(formDataObj),
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          });
+
+          const data = await response.json();
+
+          if (data.status === "success") {
+            messageDiv.textContent =
+              data.message || "Başarıyla listeye eklendi!";
+            messageDiv.style.backgroundColor = "#48c78e";
+            messageDiv.style.color = "white";
+            form.reset();
+            fileNameDisplay.textContent = "No file selected";
+          } else {
+            throw new Error(data.message || "Submission failed");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          messageDiv.textContent = "Error: " + error.message;
+          messageDiv.style.backgroundColor = "#f14668";
+          messageDiv.style.color = "white";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.classList.remove("is-loading");
+
+          setTimeout(() => {
+            messageDiv.textContent = "";
+            messageDiv.style.display = "none";
+          }, 4000);
+        }
+      });
+
+      // Enhance cancel button to reset file input display
+      const cancelButton = form.querySelector("button.is-danger");
+      cancelButton.addEventListener("click", function () {
+        form.reset();
+        fileNameDisplay.textContent = "No file selected";
+        messageDiv.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
