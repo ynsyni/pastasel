@@ -633,12 +633,17 @@ if (navigator.geolocation) {
         messageDiv.style.display = "none";
       });
    
-     function setLocation(lat, lng) {
+
+
+function setLocation(lat, lng) {
     document.getElementById("latitude").value = lat;
     document.getElementById("longitude").value = lng;
-  }
-    
+    document.getElementById("konum").value = `https://www.google.com/maps?q=${lat},${lng}`;
+}
+
+      
     </script>
   </body>
 
 </html>
+
