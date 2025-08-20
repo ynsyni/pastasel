@@ -36,6 +36,9 @@
   readonly
 />
 
+<input type="hidden" id="latitude" name="latitude">
+<input type="hidden" id="longitude" name="longitude">
+        
  </div>
 <div class="field">
   <label class="label" for="durum">*Ziyaret Sebebi</label>
@@ -629,6 +632,13 @@ if (navigator.geolocation) {
         fileNameDisplay.textContent = "No file selected";
         messageDiv.style.display = "none";
       });
+   
+     function setLocation(lat, lng) {
+    document.getElementById("latitude").value = lat;
+    document.getElementById("longitude").value = lng;
+  }
+    
     </script>
   </body>
+
 </html>
